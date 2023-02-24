@@ -23,7 +23,7 @@ export const imagesListSlice = createSlice({
     activeImage: {
       title: "one",
       source:
-        "https://cdn.create.vista.com/api/media/medium/197187356/stock-photo-portrait-beautiful-african-american-woman?token=",
+        "https://cdn.create.vista.com/api/media/medium/255294576/stock-photo-side-view-african-american-woman?token=",
     },
   },
 
