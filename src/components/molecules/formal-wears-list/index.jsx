@@ -3,6 +3,7 @@ import {
   Flex,
   List,
   ListItem,
+  Tag,
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
@@ -12,6 +13,7 @@ import {
   getColors,
   getSelectedColor,
   getSelectedSize,
+  getSizeGuide,
   getSizes,
   getWears,
   selectColor,
@@ -24,8 +26,9 @@ function FormalWearsList() {
   const sizes = useSelector(getSizes);
   const selectedColor = useSelector(getSelectedColor);
   const selectedSize = useSelector(getSelectedSize);
+  const sizeGuide = useSelector(getSizeGuide);
   const dispatch = useDispatch();
-  console.log({ wears });
+  console.log({ sizes });
 
   return (
     <Box>
@@ -58,7 +61,12 @@ function FormalWearsList() {
           Select color
         </Text>
 
-        <List display={"flex"} flexDirection={"row"} alignItems={"center"}>
+        <List
+          display={"flex"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          mb={"0.8rem"}
+        >
           {colors &&
             colors.length &&
             colors.map((item) =>
@@ -98,6 +106,67 @@ function FormalWearsList() {
             )}
         </List>
       </Flex>
+
+      <Flex w={"200px"} flexDirection='column' mb={"2rem"}>
+        <Flex w={"auto"} justifyContent={"space-between"} mb={"0.5rem"}>
+          <Text
+            color={"#fff"}
+            fontSize={"sm"}
+            mr={"1rem"}
+            fontWeight={"semibold"}
+          >
+            Select size
+          </Text>
+          <Text
+            color={selectedColor || "#fff"}
+            fontSize={"sm"}
+            mr={"1rem"}
+            fontWeight={"semibold"}
+          >
+            Size Guide
+          </Text>
+        </Flex>
+
+        <List display={"flex"} flexDirection={"row"} alignItems={"center"}>
+          {sizes &&
+            sizes.length &&
+            sizes.map((item) => (
+              <Tag
+                mr={"0.5rem"}
+                cursor={"pointer"}
+                backgroundColor={
+                  item === selectedSize
+                    ? "#4FD1C5"
+                    : item === sizeGuide
+                    ? "#9899a0"
+                    : "transparent"
+                }
+                border={"1px solid "}
+                borderColor={
+                  item !== selectedSize && item !== sizeGuide
+                    ? "#fff"
+                    : "transparent"
+                }
+                color={"#fff"}
+                onClick={() => dispatch(selectSize(item))}
+              >
+                {item}
+              </Tag>
+            ))}
+        </List>
+      </Flex>
+
+      <Box>
+        <Text color={"#fff"}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+          sapiente cupiditate velit natus, in ipsam sequi tempora eius optio
+          laborum, quae ipsum animi ex nostrum assumenda quo? Vel iure eos
+          reiciendis, veritatis perspiciatis inventore velit aliquam vitae
+          quaerat exercitationem error doloribus corporis voluptate ex? Deleniti
+          ratione beatae repudiandae nam placeat reiciendis delectus dolore
+          consequuntur fugit, culpa aliquid minus nisi exercitationem!
+        </Text>
+      </Box>
     </Box>
   );
 }

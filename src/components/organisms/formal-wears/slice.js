@@ -8,7 +8,7 @@ export const formalWearsSlice = createSlice({
     selectedColor: "#C53030",
     sizes: [32, 42, 66, 12],
     selectedSize: 12,
-    sizeGuide: 12,
+    sizeGuide: 32,
   },
 
   reducers: {
@@ -28,5 +28,6 @@ export const getColors = (state) => state.formalWears.colors;
 export const getSizes = (state) => state.formalWears.sizes;
 export const getSelectedColor = (state) => state.formalWears.selectedColor;
 export const getSelectedSize = (state) => state.formalWears.selectedSize;
+export const getSizeGuide = (state) => state.formalWears.sizeGuide;
 
 export default formalWearsSlice.reducer;
