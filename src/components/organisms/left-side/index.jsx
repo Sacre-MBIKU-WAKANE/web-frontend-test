@@ -1,8 +1,14 @@
+import { Flex } from "@chakra-ui/react";
+import ImageSelected from "../../atoms/image-selected";
+import ImagesList from "../../molecules/images-list";
 
 function LeftSection() {
   return (
-    <div>LeftSection</div>
-  )
+    <Flex alignItems={"center"} flexDirection={["column-reverse", "row"]}>
+      <ImagesList />
+      <ImageSelected />
+    </Flex>
+  );
 }
 
-export default LeftSection
+export default LeftSection;

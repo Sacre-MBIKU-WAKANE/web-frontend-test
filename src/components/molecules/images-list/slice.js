@@ -20,12 +20,16 @@ export const imagesListSlice = createSlice({
           "https://cdn.create.vista.com/api/media/medium/255294512/stock-photo-side-view-african-american-woman?token=",
       },
     ],
-    activeImage: { title: "one" },
+    activeImage: {
+      title: "one",
+      source:
+        "https://cdn.create.vista.com/api/media/medium/197187356/stock-photo-portrait-beautiful-african-american-woman?token=",
+    },
   },
 
   reducers: {
     selectImage: (state, { payload }) => {
-      state.activeImage.title = payload;
+      state.activeImage = payload;
     },
   },
 });
@@ -33,6 +37,6 @@ export const imagesListSlice = createSlice({
 export const { selectImage } = imagesListSlice.actions;
 
 export const getImages = (state) => state.images.images;
-export const getActiveImage = (state) => state.images.activeImage.title;
+export const getActiveImage = (state) => state.images.activeImage;
 
 export default imagesListSlice.reducer;

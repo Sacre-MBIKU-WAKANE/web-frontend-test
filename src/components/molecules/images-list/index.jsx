@@ -11,16 +11,17 @@ function ImagesList() {
 
   return (
     <Box w={"20%"} height={"20%"}>
-      <List>
+      <List display={"flex"} flexDirection={["row", "column-reverse"]}>
         {images &&
           images.length &&
           images.map(({ title, source }) => (
             <ImageItem
+              key={title}
               imageTitle={title}
               imageSource={source}
-              isActive={activeImage === title}
+              isActive={activeImage.title === title}
               onClick={() => {
-                dispatch(selectImage(title));
+                dispatch(selectImage({ title, source }));
               }}
             />
           ))}
