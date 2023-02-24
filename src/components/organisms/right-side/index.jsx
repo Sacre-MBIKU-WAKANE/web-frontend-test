@@ -1,6 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import ImageSelected from "../../atoms/image-selected";
-import ImagesList from "../../molecules/images-list";
+import RightSideHeader from "../../molecules/right-side-header";
 
 function RightSection() {
   return (
@@ -9,8 +8,7 @@ function RightSection() {
       flexDirection={["column-reverse", "row"]}
       w={"100%"}
     >
-      <ImagesList />
-      <ImageSelected />
+      <RightSideHeader />
     </Flex>
   );
 }
