@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import ImageSelected from "../../atoms/image-selected";
 import ImagesList from "../../molecules/images-list";
 
-function LeftSection() {
+function RightSection() {
   return (
     <Flex
       alignItems={"center"}
@@ -15,4 +15,4 @@ function LeftSection() {
   );
 }
 
-export default LeftSection;
+export default RightSection;

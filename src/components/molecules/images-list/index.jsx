@@ -10,7 +10,7 @@ function ImagesList() {
   const dispatch = useDispatch();
 
   return (
-    <Box w={"20%"} height={"20%"}>
+    <Box w={["50%", "20%"]}>
       <List display={"flex"} flexDirection={["row", "column-reverse"]}>
         {images &&
           images.length &&
