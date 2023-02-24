@@ -1,5 +1,5 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
-import image from "../../../183a146f25ab8487c04dfcac7c5bf2e2.jpg";
+import image from "../../../assets/183a146f25ab8487c04dfcac7c5bf2e2.jpg";
 function OwnerProfile() {
   return (
     <Flex alignItems={"center"}>
