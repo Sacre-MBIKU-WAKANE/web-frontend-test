@@ -4,8 +4,8 @@ export const formalWearsSlice = createSlice({
   name: "formalWears",
   initialState: {
     wears: ["Available", "100% coton"],
-    colors: ["red", "blue", "yellow"],
-    selectedColor: "red",
+    colors: ["#C53030", "#4FD1C5", "#F6E05E"],
+    selectedColor: "#C53030",
     sizes: [32, 42, 66, 12],
     selectedSize: 12,
     sizeGuide: 12,
@@ -21,9 +21,11 @@ export const formalWearsSlice = createSlice({
   },
 });
 
-export const { selectWear } = formalWearsSlice.actions;
+export const { selectWear, selectColor, selectSize } = formalWearsSlice.actions;
 
-export const getWears = (state) => state.formalWears.Wears;
+export const getWears = (state) => state.formalWears.wears;
+export const getColors = (state) => state.formalWears.colors;
+export const getSizes = (state) => state.formalWears.sizes;
 export const getSelectedColor = (state) => state.formalWears.selectedColor;
 export const getSelectedSize = (state) => state.formalWears.selectedSize;
 
