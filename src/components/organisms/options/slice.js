@@ -27,7 +27,7 @@ export const optionsSlice = createSlice({
         ],
       },
       {
-        title: "Option 1",
+        title: "Option 3",
         optionsList: [
           "Night Gowns",
           "Painties",
@@ -48,9 +48,9 @@ export const optionsSlice = createSlice({
   },
 });
 
-export const { selectOption } = formalWearsSlice.actions;
+export const { selectOption } = optionsSlice.actions;
 
 export const getOptions = (state) => state.options.options;
-export const getSelectedOption = (state) => state.formalWears.selectedOption;
+export const getSelectedOption = (state) => state.options.selectedOption;
 
 export default optionsSlice.reducer;
